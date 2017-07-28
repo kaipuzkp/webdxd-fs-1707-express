@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    form(action='/update/'+student._id, method='POST')
+        label First Name
+        br
+        input(name='firstName', type='text', value=student.firstName)
+        br
+        label Last Name
+        br
+        input(name='lastName',type='text', value=student.lastName)
+        br
+        label Age
+        br
+        input(name='age',type='text', value=student.age)
+        br
+        input(type='submit', value='Add')

@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  //ul
+  //  each student, i in students
+  //    li=student.firstName
+  table
+    tr
+      th SNUM
+      th First Name
+      th Last Name
+      th Age
+    each student,i in students
+      tr
+        td=i
+        td
+          a(href='/'+student._id)=student.firstName
+        td=student.lastName
+        td=student.age
+        td
+          a(href='/update/'+student._id) Edit
+        td
+          a#del(href='/delete/'+student._id)
+           img(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqAdB8RC5Of2VndsNKMYUKq0CjpdfoaAclyqFzTD2Erp46sfDG")
+
+
+  a(href='/new') New
